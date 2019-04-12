@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using UnityEngine.Experimental.Rendering.HDPipeline;
+//using UnityEngine.Experimental.Rendering.HDPipeline;
 using UnityEngine.Rendering;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -478,7 +478,8 @@ public class DebugOverlay : MonoBehaviour
         instanceMaterialProc.SetPass(0);
         Graphics.DrawProcedural(MeshTopology.Triangles, m_NumQuadsToDraw * 6, 1);
     }
-
+#if HDPIPE
+            
     public static void Render(HDCamera hdCamera, CommandBuffer cmd)
     {
         if (!instance)
@@ -509,6 +510,7 @@ public class DebugOverlay : MonoBehaviour
             m_line3DBuffer.HDDraw(cmd);
         }
     }
+#endif
 
     unsafe void AddLine(float x1, float y1, float x2, float y2, Vector4 col)
     {

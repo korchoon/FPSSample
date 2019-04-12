@@ -4,8 +4,6 @@
     "com.unity.entities": "0.0.12-preview.24",
     "com.unity.mathematics": "0.0.12-preview.21",
     "com.unity.package-manager-ui": "2.0.7",
-    "com.unity.render-pipelines.core": "4.6.0-preview",
-    "com.unity.render-pipelines.high-definition": "4.6.0-preview",
     "com.unity.scriptablebuildpipeline": "1.1.1-preview",
     "com.unity.shadergraph": "4.6.0-preview",
     "com.unity.textmeshpro": "1.3.0",

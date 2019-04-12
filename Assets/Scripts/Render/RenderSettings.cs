@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.HDPipeline;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
@@ -78,7 +77,9 @@ public static class RenderSettings
         }
         if(rOcclusionThreshold.ChangeCheck())
         {
+            #if HDPIPE
             HDRenderPipeline.s_OcclusionThreshold = rOcclusionThreshold.FloatValue;
+            #endif
         }
 
         bool updateAAFlags = false;
@@ -176,15 +177,20 @@ public static class RenderSettings
 
         if (rDistortion.ChangeCheck())
             updateFrameSettings = true;
-
+#if HDPIPE
+            
         if (rShadowDistMult.ChangeCheck())
             HDShadowSettings.shadowDistanceMultiplier = Mathf.Clamp(rShadowDistMult.FloatValue, 0.5f, 4.0f);
+#endif
 
+#if HDPIPE
         if (rDecalDist.ChangeCheck())
         {
             var hdasset = GraphicsSettings.renderPipelineAsset as HDRenderPipelineAsset;
             hdasset.renderPipelineSettings.decalSettings.drawDistance = rDecalDist.IntValue;
         }
+            
+#endif   
 
         if (rGamma.ChangeCheck())
             ColorGrading.globalGamma = Mathf.Clamp(rGamma.FloatValue, 0.1f, 5.0f);
@@ -226,6 +232,8 @@ public static class RenderSettings
 
     static void UpdateFrameSettings(Camera c)
     {
+#if HDPIPE
+            
         var hdCam = c.GetComponent<HDAdditionalCameraData>();
         if (hdCam == null)
             return;
@@ -237,6 +245,7 @@ public static class RenderSettings
         hdCam.GetFrameSettings().enableSSR = rSSR.IntValue > 0;
         hdCam.GetFrameSettings().enableRoughRefraction = rRoughRefraction.IntValue > 0;
         hdCam.GetFrameSettings().enableDistortion = rDistortion.IntValue > 0;
+#endif
     }
 
     static void UpdateAAFlags(Camera c)
