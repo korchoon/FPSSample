@@ -1,3 +1,6 @@
+#if POSTPROC
+
+
 // NOTE: If you are getting errors of the sort that say something like:
 //     "The type or namespace name `PostProcessing' does not exist in the namespace"
 // it is because the PostProcessing v2 module has been removed from your project.
@@ -179,3 +182,4 @@ namespace Cinemachine.PostFX.Editor
         }
     }
 } 
+#endif 

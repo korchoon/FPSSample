@@ -1,21 +1,28 @@
 using System;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.Rendering.PostProcessing;
+//using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 
 public class ScreenFaderMixerBehaviour : PlayableBehaviour
 {
     bool m_FirstFrameHappened;
+#if POSTPROC
 
     AutoExposure m_Exposure;
     PostProcessVolume m_FadeVolume;
+#endif 
+
 
     public override void OnPlayableCreate(Playable playable)
     {
         base.OnPlayableCreate(playable);
 
+#if POSTPROC
+
+
+        
         var layer = LayerMask.NameToLayer("PostProcess Volumes");
         if (layer == -1)
             GameDebug.LogWarning("Unable to find layer mask for camera fader");
@@ -25,6 +32,7 @@ public class ScreenFaderMixerBehaviour : PlayableBehaviour
         m_Exposure.keyValue.Override(0);
 
         m_FadeVolume = PostProcessManager.instance.QuickVolume(layer, 100.0f, m_Exposure);
+#endif 
     }
 
     public override void ProcessFrame(Playable playable, FrameData info, object playerData)
@@ -58,13 +66,18 @@ public class ScreenFaderMixerBehaviour : PlayableBehaviour
             if (!Mathf.Approximately (inputWeight, 0f))
                 currentInputs++;
         }
+#if POSTPROC
 
         m_Exposure.keyValue.Override(blendedExposure + 0.5f * (1.0f - totalWeight));
+#endif 
+
     }
 
     public override void OnPlayableDestroy (Playable playable)
     {
         m_FirstFrameHappened = false;
+
+#if POSTPROC
 
         m_FadeVolume.enabled = false;
         GameObject.DestroyImmediate(m_FadeVolume.gameObject);
@@ -72,5 +85,7 @@ public class ScreenFaderMixerBehaviour : PlayableBehaviour
 
         GameObject.DestroyImmediate(m_Exposure);
         m_Exposure = null;
+
+#endif 
     }
 }

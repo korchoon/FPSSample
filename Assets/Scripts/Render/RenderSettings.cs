@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.PostProcessing;
+
 
 public static class RenderSettings
 {
@@ -143,6 +143,8 @@ public static class RenderSettings
 
         if (rAAQuality.ChangeCheck())
             updateAAFlags = true;
+#if POSTPROC
+
 
         // Post effect flags
         if (rBloom.ChangeCheck())
@@ -169,6 +171,7 @@ public static class RenderSettings
             updateFrameSettings = true;
         }
 
+#endif
         if (rSSS.ChangeCheck())
             updateFrameSettings = true;
 
@@ -191,9 +194,11 @@ public static class RenderSettings
         }
             
 #endif   
+#if POSTPROC
 
         if (rGamma.ChangeCheck())
             ColorGrading.globalGamma = Mathf.Clamp(rGamma.FloatValue, 0.1f, 5.0f);
+#endif 
 
         if (updateAAFlags)
             UpdateAAFlags(Game.game.TopCamera());
@@ -250,6 +255,7 @@ public static class RenderSettings
 
     static void UpdateAAFlags(Camera c)
     {
+#if POSTPROC
         if (c == null)
             return;
 
@@ -274,6 +280,8 @@ public static class RenderSettings
             ppl.antialiasingMode = PostProcessLayer.Antialiasing.TemporalAntialiasing;
         else
             GameDebug.Log("Unknown aa mode: " + rAAMode.Value);
+
+#endif 
 
     }
 

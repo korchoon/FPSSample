@@ -5,7 +5,6 @@ using Unity.Entities;
 using UnityEngine.Experimental.Rendering;
 using System;
 using System.Globalization;
-using UnityEngine.Rendering.PostProcessing;
 using SQP;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -475,8 +474,10 @@ public class Game : MonoBehaviour
 
     public void BlackFade(bool enabled)
     {
+#if POSTPROC
         if (m_Exposure != null)
             m_Exposure.active = enabled;
+#endif
     }
 
     public void PopCamera(Camera cam)
@@ -973,8 +974,11 @@ public class Game : MonoBehaviour
 
     // Global camera handling
     List<Camera> m_CameraStack = new List<Camera>();
+#if POSTPROC
     AutoExposure m_Exposure;
     PostProcessVolume m_ExposureVolume;
+#endif
+
     int m_ExposureReleaseCount;
 
     List<IGameLoop> m_gameLoops = new List<IGameLoop>();
