@@ -8,12 +8,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Factory_Furnace_A
-  m_Shader: {fileID: 4800000, guid: 81d02e8644315b742b154842a3a2f98c, type: 3}
-  m_ShaderKeywords: _BENTNORMALMAP0 _ENABLESPECULAROCCLUSION _HEIGHTMAP1 _HEIGHTMAP2 _HEIGHTMAP3 _HEIGHT_BASED_BLEND _INFLUENCEMASK_MAP _LAYEREDLIT_4_LAYERS _LAYER_MAPPING_TRIPLANAR2 _LAYER_MAPPING_TRIPLANAR3 _MAIN_LAYER_INFLUENCE_MODE _MASKMAP0 _MASKMAP1 _MASKMAP2 _MASKMAP3 _NORMALMAP0 _NORMALMAP1 _NORMALMAP2 _NORMALMAP3 _NORMALMAP_TANGENT_SPACE0 _NORMALMAP_TANGENT_SPACE1 _NORMALMAP_TANGENT_SPACE2 _NORMALMAP_TANGENT_SPACE3
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _BENTNORMALMAP0 _ENABLESPECULAROCCLUSION _HEIGHTMAP1 _HEIGHTMAP2
+    _HEIGHTMAP3 _HEIGHT_BASED_BLEND _INFLUENCEMASK_MAP _LAYEREDLIT_4_LAYERS _LAYER_MAPPING_TRIPLANAR2
+    _LAYER_MAPPING_TRIPLANAR3 _MAIN_LAYER_INFLUENCE_MODE _MASKMAP0 _MASKMAP1 _MASKMAP2
+    _MASKMAP3 _NORMALMAP0 _NORMALMAP1 _NORMALMAP2 _NORMALMAP3 _NORMALMAP_TANGENT_SPACE0
+    _NORMALMAP_TANGENT_SPACE1 _NORMALMAP_TANGENT_SPACE2 _NORMALMAP_TANGENT_SPACE3
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
   - DistortionVectors
@@ -85,6 +89,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -105,7 +117,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DistortionVectorMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -165,6 +189,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 802eccb73d0f67e4983a14d5951d9ea5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _NormalMap:
         m_Texture: {fileID: 2800000, guid: c9e020994e8d01644a24a59683cf8396, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -202,6 +230,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -288,6 +324,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _Anisotropy: 0
     - _BlendMode: 0
+    - _BumpScale: 1
     - _CoatCoverage: 1
     - _CoatIOR: 0.5
     - _CullMode: 2
@@ -298,6 +335,7 @@ Material:
     - _DetailAlbedoScale1: 1
     - _DetailAlbedoScale2: 1
     - _DetailAlbedoScale3: 1
+    - _DetailNormalMapScale: 1
     - _DetailNormalScale: 1
     - _DetailNormalScale0: 1
     - _DetailNormalScale1: 1
@@ -343,6 +381,9 @@ Material:
     - _EnableSpecularOcclusion: 1
     - _EnableWind: 0
     - _FpsModeFov: 60
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
     - _HdrpVersion: 1
     - _HeightAmplitude: 0.01
     - _HeightAmplitude0: 0.02
@@ -413,6 +454,7 @@ Material:
     - _Metallic1: 0
     - _Metallic2: 0
     - _Metallic3: 0
+    - _Mode: 0
     - _NormalMapSpace: 0
     - _NormalMapSpace0: 0
     - _NormalMapSpace1: 0
@@ -424,6 +466,7 @@ Material:
     - _NormalScale2: 2
     - _NormalScale3: 1
     - _ObjectScaleAffectTile: 0
+    - _OcclusionStrength: 1
     - _OpacityAsDensity0: 0
     - _OpacityAsDensity1: 0
     - _OpacityAsDensity2: 0
@@ -433,7 +476,9 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
+    - _Parallax: 0.02
     - _PreRefractionPass: 0
+    - _ReceivesSSR: 1
     - _RefractionMode: 0
     - _ShiverDirectionality: 0.5
     - _ShiverDrag: 0.2
@@ -457,8 +502,10 @@ Material:
     - _SmoothnessRemapMin1: 0
     - _SmoothnessRemapMin2: 0
     - _SmoothnessRemapMin3: 0
+    - _SmoothnessTextureChannel: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _StencilRef: 2
     - _StencilRefMV: 128
@@ -509,6 +556,7 @@ Material:
     - _UVDetail2: 0
     - _UVDetail3: 0
     - _UVEmissive: 0
+    - _UVSec: 0
     - _UseDensityMode: 0
     - _UseHeightBasedBlend: 1
     - _UseMainLayerInfluence: 1

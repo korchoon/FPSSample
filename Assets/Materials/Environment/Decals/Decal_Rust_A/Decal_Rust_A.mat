@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Decal_Rust_A
-  m_Shader: {fileID: 4800000, guid: 1d64af84bdc970c4fae0c1e06dd95b73, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALBEDOCONTRIBUTION _COLORMAP _MASKMAP _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -46,6 +46,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _CoatNormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -54,7 +58,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -71,6 +83,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortionVectorMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -98,6 +114,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: d6a1a01c68bdd1046888dd257036492f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -107,6 +127,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -168,6 +196,7 @@ Material:
     - _BaseColorMapUV: 0
     - _BaseColorMapUVLocal: 0
     - _BlendMode: 0
+    - _BumpScale: 1
     - _CoatIor: 1.5
     - _CoatMask: 1
     - _CoatNormalMapObjSpace: 0
@@ -199,6 +228,7 @@ Material:
     - _DetailMaskMapShow: 0
     - _DetailMaskMapUV: 0
     - _DetailMaskMapUVLocal: 0
+    - _DetailNormalMapScale: 1
     - _DetailNormalMapShow: 0
     - _DetailNormalMapUV: 0
     - _DetailNormalMapUVLocal: 0
@@ -258,6 +288,9 @@ Material:
     - _EnableWind: 0
     - _FpsModeFov: 60
     - _GeometricNormalFilteringEnabled: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
     - _HdrpVersion: 1
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
@@ -301,6 +334,7 @@ Material:
     - _MetallicMapUV: 0
     - _MetallicMapUVLocal: 0
     - _MetallicUseMap: 0
+    - _Mode: 0
     - _NormalBlendSrc: 0
     - _NormalMapObjSpace: 0
     - _NormalMapShow: 0
@@ -308,11 +342,13 @@ Material:
     - _NormalMapUV: 0
     - _NormalMapUVLocal: 0
     - _NormalScale: 1
+    - _OcclusionStrength: 1
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
+    - _Parallax: 0.02
     - _PreRefractionPass: 0
     - _RefractionMode: 0
     - _SSSShow: 0
@@ -334,9 +370,11 @@ Material:
     - _SmoothnessBUseMap: 0
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
+    - _SmoothnessTextureChannel: 0
     - _SpecularAntiAliasingScreenSpaceVariance: 0.1
     - _SpecularAntiAliasingShow: 0
     - _SpecularAntiAliasingThreshold: 0.2
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _StandardShow: 0
     - _StencilRef: 2
@@ -368,6 +406,7 @@ Material:
     - _TransparentSortPriority: 0
     - _UVBase: 0
     - _UVDetail: 0
+    - _UVSec: 0
     - _VlayerRecomputePerLight: 0
     - _VlayerUseRefractedAnglesForBase: 0
     - _ZTestDepthEqualForOpaque: 3

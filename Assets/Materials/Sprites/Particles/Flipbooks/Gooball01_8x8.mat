@@ -5,16 +5,16 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Gooball01_8x8
-  m_Shader: {fileID: 4800000, guid: c4edd00ff2db5b24391a4fcb1762e459, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _BLENDMODE_ADD _EMISSIVE_COLOR_MAP _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses:
   - DistortionVectors
   m_SavedProperties:
@@ -100,7 +100,7 @@ Material:
     - _DistortionVectorBias: -1
     - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 0
-    - _DstBlend: 1
+    - _DstBlend: 0
     - _EmissiveIntensity: 200
     - _EnableFogOnTransparent: 0
     - _GlossMapScale: 1
@@ -125,7 +125,7 @@ Material:
     - _UVSec: 0
     - _ZTestMode: 8
     - _ZTestModeDistortion: 8
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - _Color: {r: 8.972549, g: 16, b: 15.87451, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
